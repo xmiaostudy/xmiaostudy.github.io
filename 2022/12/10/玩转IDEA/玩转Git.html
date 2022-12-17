@@ -1,0 +1,64 @@
+<hr>
+<p>title: GitStudy<br>date: 2022-12-11 18:35:02<br>tags:</p>
+<hr>
+<h1 id="玩转Git"><a href="#玩转Git" class="headerlink" title="玩转Git"></a>玩转Git</h1><h3 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h3><pre><code>cd      改变目录
+cd ..   回退上一个目录
+pwd     显示当前所在的目录路径
+ls(ll)  列出当前目录中的所有文件
+touch   新建一个文件
+rm      删除一个文件
+mkdir   新建一个文件夹
+rm -r   删除一个文件夹
+reset   重新初始化终端/清屏
+clear   清屏
+history 查看命令历史
+help    帮助
+exit    退出
+#       表示注释
+</code></pre>
+<h3 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h3><pre><code>git config -l  查看配置(显示name 和 email)
+git config --system --list  查看系统配置(没有name 和 email)
+git config --global --list  查看本地配置(单独显示出name 和 email)
+git config --global user.name &quot;&quot;  设置用户名
+git config --global user.email &quot;&quot;  设置邮箱
+</code></pre>
+<h3 id="Git基本理论"><a href="#Git基本理论" class="headerlink" title="Git基本理论"></a>Git基本理论</h3><pre><code>Git本地三个工作区域
+工作目录(Working Directory)
+暂存区(Stage/Index)
+资源库(Repository/Git Directory)
+一个远程
+Git远程仓库(Remote Directory)
+---------------------------
+git add files
+把本地文件添加到暂存区（stage）
+git commit
+提交到本地仓库
+git push
+推到远程仓库
+</code></pre>
+<h3 id="Git项目创建及克隆"><a href="#Git项目创建及克隆" class="headerlink" title="Git项目创建及克隆"></a>Git项目创建及克隆</h3><pre><code>git clone url  远程项目克隆到本地
+git status  查看文件状态
+---------------------------
+git init                   初始化仓库
+git add .                  添加到暂存区（文件被跟踪）
+git commit -m &quot;注释内容&quot;  （暂存区）提交到本地仓库
+---------------------------
+忽略文件
+创建 .gitignore 文件
+例子:
+*.txt      忽略所有 .txt 结尾的文件
+!lib.txt   lib.txt除外
+build/     忽略build/ 目录下的所有文件
+..........
+</code></pre>
+<p>###使用Gitee</p>
+<pre><code>设置本机绑定 SSH 公钥，实现 免密登录
+进入 C:\user\administrator\.ssh 目录(首次创建没有内容 .ssh)
+生成公钥
+ssh-keygen -t rsa
+</code></pre>
+<h3 id="IDEA中集成Git操作"><a href="#IDEA中集成Git操作" class="headerlink" title="IDEA中集成Git操作"></a>IDEA中集成Git操作</h3><pre><code>
+</code></pre>
+<h3 id="git相关的配置文件：保存在本地-所有的配置文件都保存在本地"><a href="#git相关的配置文件：保存在本地-所有的配置文件都保存在本地" class="headerlink" title="git相关的配置文件：保存在本地(所有的配置文件都保存在本地)"></a>git相关的配置文件：保存在本地(所有的配置文件都保存在本地)</h3><pre><code>Git\etc\gitconfig:  Git安装目录下的 --system系统级别
+用户配置(name and email) C盘\gitconfig
+</code></pre>
