@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>redisstudy | 喵喵</title><meta name="author" content="喵大人"><meta name="copyright" content="喵大人"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="redis概述 redis是什么？  REmote DIctionary Server(Redis) Redis 是一个高性能的key-value数据库性能极高 – Redis能读的速度是110000次&#x2F;s,写的速度是81000次&#x2F;s 。  windows安装 下载地址：https:&#x2F;&#x2F;github.com&#x2F;tporadowski&#x2F;redis&#x2F;releases   linux安装 下载地址：htt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redisstudy">
+<meta property="og:url" content="http://example.com/2022/12/30/redisstudy/index.html">
+<meta property="og:site_name" content="喵喵">
+<meta property="og:description" content="redis概述 redis是什么？  REmote DIctionary Server(Redis) Redis 是一个高性能的key-value数据库性能极高 – Redis能读的速度是110000次&#x2F;s,写的速度是81000次&#x2F;s 。  windows安装 下载地址：https:&#x2F;&#x2F;github.com&#x2F;tporadowski&#x2F;redis&#x2F;releases   linux安装 下载地址：htt">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg">
+<meta property="article:published_time" content="2022-12-30T13:42:07.000Z">
+<meta property="article:modified_time" content="2022-12-31T15:31:05.822Z">
+<meta property="article:author" content="喵大人">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/12/30/redisstudy/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'redisstudy',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-31 23:31:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/12/16/PAniQkBVuTNeZFo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于喵大人</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">喵喵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于喵大人</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">redisstudy</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-12-30T13:42:07.000Z" title="Created 2022-12-30 21:42:07">2022-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-12-31T15:31:05.822Z" title="Updated 2022-12-31 23:31:05">2022-12-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="redisstudy"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="redis概述"><a href="#redis概述" class="headerlink" title="redis概述"></a>redis概述</h3><blockquote>
+<p>redis是什么？</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">REmote DIctionary Server(Redis) </span><br><span class="line">Redis 是一个高性能的key-value数据库</span><br><span class="line">性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。</span><br></pre></td></tr></table></figure>
+
+<h3 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h3><blockquote>
+<p><strong>下载地址：</strong><a target="_blank" rel="noopener" href="https://github.com/tporadowski/redis/releases">https://github.com/tporadowski/redis/releases</a></p>
+</blockquote>
+<p><img src="/2022/12/30/redisstudy/image-20221230232353283.png" alt="image-20221230232353283"></p>
+<h3 id="linux安装"><a href="#linux安装" class="headerlink" title="linux安装"></a>linux安装</h3><blockquote>
+<p><strong>下载地址：</strong><a target="_blank" rel="noopener" href="http://redis.io/download">http://redis.io/download</a></p>
+</blockquote>
+<p><img src="/2022/12/30/redisstudy/image-20221231214947545.png" alt="image-20221231214947545"></p>
+<h3 id="五大数据类型"><a href="#五大数据类型" class="headerlink" title="五大数据类型"></a>五大数据类型</h3><h4 id="redis-key"><a href="#redis-key" class="headerlink" title="redis-key"></a>redis-key</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select 0(0-15)  //切换第0个数据库</span><br><span class="line">dbsize		//查看当前数据库大小</span><br><span class="line">flushdb   //清除当前数据库</span><br><span class="line">flushall   //清除所有数据库</span><br><span class="line">keys *	//查看所有的key</span><br><span class="line">set name miaomiao  //set key</span><br><span class="line">get name   //get key</span><br><span class="line">exists  //判断当前key是否存在</span><br><span class="line">move name 1  //移除key 在一号数据库</span><br><span class="line">expire name 10  //设置key 10秒后过期</span><br><span class="line">ttl name   //查看当前key剩余时间</span><br><span class="line">type name  //查看当前key类型</span><br></pre></td></tr></table></figure>
+
+<h4 id="string"><a href="#string" class="headerlink" title="string"></a>string</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">127.0.0.1:6379&gt; set key1 v1</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) &quot;age&quot;</span><br><span class="line">2) &quot;name&quot;</span><br><span class="line">3) &quot;key1&quot;</span><br><span class="line">127.0.0.1:6379&gt; exists key1 //查看key1是否存在</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; append key1 &#x27;hello&#x27; //为key1追加内容</span><br><span class="line">(integer) 7</span><br><span class="line">127.0.0.1:6379&gt; exists key1</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;v1hello&quot;</span><br><span class="line">127.0.0.1:6379&gt; append key1 &#x27;,miaostudy&#x27;</span><br><span class="line">(integer) 17</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">&quot;v1hello,miaostudy&quot;</span><br><span class="line">127.0.0.1:6379&gt; strlen key1 //查看key1字符长度</span><br><span class="line">(integer) 17</span><br><span class="line">127.0.0.1:6379&gt; </span><br><span class="line">###################################</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) &quot;age&quot;</span><br><span class="line">2) &quot;name&quot;</span><br><span class="line">3) &quot;key1&quot;</span><br><span class="line">127.0.0.1:6379&gt; append key2 &#x27;aaabbb&#x27; //如果追加key不存在，就相当于set key</span><br><span class="line">(integer) 6</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) &quot;age&quot;</span><br><span class="line">2) &quot;name&quot;</span><br><span class="line">3) &quot;key1&quot;</span><br><span class="line">4) &quot;key2&quot;</span><br><span class="line">127.0.0.1:6379&gt; </span><br><span class="line">#############################################</span><br><span class="line">127.0.0.1:6379&gt; set views 0</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get views</span><br><span class="line">&quot;0&quot;</span><br><span class="line">127.0.0.1:6379&gt; incr views //加一</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; incr views</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; decr views //减一</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; decr views</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; incrby views 9 //设置一次性加9</span><br><span class="line">(integer) 9</span><br><span class="line">127.0.0.1:6379&gt; incrby views 9</span><br><span class="line">(integer) 18</span><br><span class="line">127.0.0.1:6379&gt; decrby views 5 //设置一次性减5</span><br><span class="line">(integer) 13</span><br><span class="line">127.0.0.1:6379&gt; decrby views 5</span><br><span class="line">(integer) 8</span><br><span class="line">127.0.0.1:6379&gt; </span><br><span class="line">############################################</span><br><span class="line">字符串范围 range</span><br><span class="line">127.0.0.1:6379&gt; set info hfaksdhsdkjh</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get ingo</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379&gt; get info</span><br><span class="line">&quot;hfaksdhsdkjh&quot;</span><br><span class="line">127.0.0.1:6379&gt; getrange info 0 3 //获取范围</span><br><span class="line">&quot;hfak&quot;</span><br><span class="line">127.0.0.1:6379&gt; getrange info 0 -1 //-1 查看长度</span><br><span class="line">&quot;hfaksdhsdkjh&quot;</span><br><span class="line">127.0.0.1:6379&gt; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/xmiaostudy">喵大人</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/12/30/redisstudy/">http://example.com/2022/12/30/redisstudy/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/31/springmvc%E4%B9%B1%E7%A0%81/"><img class="prev-cover" src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">springmvc乱码</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/21/swagger%E9%97%AE%E9%A2%98/"><img class="next-cover" src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">swagger问题</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/12/16/PAniQkBVuTNeZFo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">喵大人</div><div class="author-info__description">这是用来学习使用的博客，记录学习笔记，做一个充实的自己。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xmiaostudy"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xmiaostudy" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2044478698@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#redis%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">redis概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">windows安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">linux安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">五大数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#redis-key"><span class="toc-number">4.1.</span> <span class="toc-text">redis-key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#string"><span class="toc-number">4.2.</span> <span class="toc-text">string</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/31/spring%E5%AD%A6%E4%B9%A0/" title="spring学习"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="spring学习"/></a><div class="content"><a class="title" href="/2022/12/31/spring%E5%AD%A6%E4%B9%A0/" title="spring学习">spring学习</a><time datetime="2022-12-31T15:38:04.000Z" title="Created 2022-12-31 23:38:04">2022-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/31/springmvc%E4%B9%B1%E7%A0%81/" title="springmvc乱码"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="springmvc乱码"/></a><div class="content"><a class="title" href="/2022/12/31/springmvc%E4%B9%B1%E7%A0%81/" title="springmvc乱码">springmvc乱码</a><time datetime="2022-12-31T15:35:54.000Z" title="Created 2022-12-31 23:35:54">2022-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/30/redisstudy/" title="redisstudy"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="redisstudy"/></a><div class="content"><a class="title" href="/2022/12/30/redisstudy/" title="redisstudy">redisstudy</a><time datetime="2022-12-30T13:42:07.000Z" title="Created 2022-12-30 21:42:07">2022-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/21/swagger%E9%97%AE%E9%A2%98/" title="swagger问题"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="swagger问题"/></a><div class="content"><a class="title" href="/2022/12/21/swagger%E9%97%AE%E9%A2%98/" title="swagger问题">swagger问题</a><time datetime="2022-12-21T14:25:05.000Z" title="Created 2022-12-21 22:25:05">2022-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/18/springMVC%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%AF%BC%E5%87%BA%E9%85%8D%E7%BD%AE/" title="springMVC静态资源导出配置"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="springMVC静态资源导出配置"/></a><div class="content"><a class="title" href="/2022/12/18/springMVC%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%AF%BC%E5%87%BA%E9%85%8D%E7%BD%AE/" title="springMVC静态资源导出配置">springMVC静态资源导出配置</a><time datetime="2022-12-18T07:59:12.000Z" title="Created 2022-12-18 15:59:12">2022-12-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 By 喵大人</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">xmiaostudy</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
