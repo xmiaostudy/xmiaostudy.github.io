@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Spring-mvc-study | 喵喵</title><meta name="author" content="喵大人"><meta name="copyright" content="喵大人"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="springmvc-首页访问 jar包依赖  &lt;dependency&gt;            &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;            &lt;artifactId&gt;spring-webmvc&lt;&#x2F;artifactId&gt;            &lt;version&gt;5.3.16&amp;l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring-mvc-study">
+<meta property="og:url" content="http://example.com/2023/01/13/Spring-mvc-study/index.html">
+<meta property="og:site_name" content="喵喵">
+<meta property="og:description" content="springmvc-首页访问 jar包依赖  &lt;dependency&gt;            &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;            &lt;artifactId&gt;spring-webmvc&lt;&#x2F;artifactId&gt;            &lt;version&gt;5.3.16&amp;l">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg">
+<meta property="article:published_time" content="2023-01-13T12:25:50.000Z">
+<meta property="article:modified_time" content="2023-01-19T06:08:55.881Z">
+<meta property="article:author" content="喵大人">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/01/13/Spring-mvc-study/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Spring-mvc-study',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-19 14:08:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/12/16/PAniQkBVuTNeZFo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于喵大人</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">喵喵</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于喵大人</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Spring-mvc-study</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-01-13T12:25:50.000Z" title="Created 2023-01-13 20:25:50">2023-01-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-01-19T06:08:55.881Z" title="Updated 2023-01-19 14:08:55">2023-01-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Spring-mvc-study"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="springmvc-首页访问"><a href="#springmvc-首页访问" class="headerlink" title="springmvc-首页访问"></a>springmvc-首页访问</h2><blockquote>
+<p>jar包依赖</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;<span class="number">5.3</span><span class="number">.16</span>&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;<span class="number">1.2</span><span class="number">.3</span>&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;<span class="number">3.1</span><span class="number">.0</span>&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.thymeleaf&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;thymeleaf-spring5&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;<span class="number">3.0</span><span class="number">.12</span>.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>web.xml</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;!--    配置springmvc前端控制器，对浏览器发送的请求统一处理--&gt;</span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;springmvcdemo&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">&lt;!--        配置springmvc的配置文件的 位置 和 名称--&gt;</span><br><span class="line">        &lt;init-param&gt;</span><br><span class="line">            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">            &lt;param-value&gt;classpath:springMVC.xml&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">&lt;!--       将前端控制器dispatcherServlet的初始化时间 提前到 服务器 启动时--&gt;</span><br><span class="line">        &lt;load-on-startup&gt;<span class="number">1</span>&lt;/load-on-startup&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;springmvcdemo&lt;/servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>springMVC.xml配置</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;!--    配置组件扫描--&gt;</span><br><span class="line">  &lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">&quot;com.miao.controller&quot;</span>&gt;&lt;/context:component-scan&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置Thymeleaf视图解析器 --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">&quot;viewResolver&quot;</span> class=<span class="string">&quot;org.thymeleaf.spring5.view.ThymeleafViewResolver&quot;</span>&gt;</span><br><span class="line">&lt;!--        优先级--&gt;</span><br><span class="line">        &lt;property name=<span class="string">&quot;order&quot;</span> value=<span class="string">&quot;1&quot;</span>/&gt;</span><br><span class="line">        &lt;property name=<span class="string">&quot;characterEncoding&quot;</span> value=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span><br><span class="line">        &lt;property name=<span class="string">&quot;templateEngine&quot;</span>&gt;</span><br><span class="line">            &lt;bean class=<span class="string">&quot;org.thymeleaf.spring5.SpringTemplateEngine&quot;</span>&gt;</span><br><span class="line">                &lt;property name=<span class="string">&quot;templateResolver&quot;</span>&gt;</span><br><span class="line">                    &lt;bean class=<span class="string">&quot;org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;!-- 视图前缀 --&gt;</span><br><span class="line">                        &lt;property name=<span class="string">&quot;prefix&quot;</span> value=<span class="string">&quot;/WEB-INF/templates/&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;!-- 视图后缀 --&gt;</span><br><span class="line">                        &lt;property name=<span class="string">&quot;suffix&quot;</span> value=<span class="string">&quot;.html&quot;</span>/&gt;</span><br><span class="line">                        &lt;property name=<span class="string">&quot;templateMode&quot;</span> value=<span class="string">&quot;HTML5&quot;</span>/&gt;</span><br><span class="line">                        &lt;property name=<span class="string">&quot;characterEncoding&quot;</span> value=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span><br><span class="line">                    &lt;/bean&gt;</span><br><span class="line">                &lt;/property&gt;</span><br><span class="line">            &lt;/bean&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230113224159435.png" alt="image-20230113224159435"></p>
+<blockquote>
+<p>访问页面</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230113224300540.png" alt="image-20230113224300540"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230113224345859.png" alt="image-20230113224345859"></p>
+<blockquote>
+<p>web.xml</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230113234030012.png" alt="image-20230113234030012"></p>
+<blockquote>
+<p>webapp</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230113234217084.png" alt="image-20230113234217084"></p>
+<h3 id="requestmapping-value"><a href="#requestmapping-value" class="headerlink" title="@requestmapping-value"></a>@requestmapping-value</h3><blockquote>
+<p>alt + 7 查看 structure</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230113233341039.png" alt="image-20230113233341039"></p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@AliasFor(&quot;path&quot;)</span></span><br><span class="line">String[] value() <span class="keyword">default</span> &#123;&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>可以多个地址访问同一个页面</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230113233533511.png" alt="image-20230113233533511"></p>
+<h3 id="requestmapping-method"><a href="#requestmapping-method" class="headerlink" title="@requestmapping-method"></a>@requestmapping-method</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230114211252444.png" alt="image-20230114211252444"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114211337442.png" alt="image-20230114211337442"></p>
+<blockquote>
+<p>多个请求方法方式</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114211426381.png" alt="image-20230114211426381"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114211442497.png" alt="image-20230114211442497"></p>
+<h3 id="requestmapping-params"><a href="#requestmapping-params" class="headerlink" title="@requestmapping-params"></a>@requestmapping-params</h3><blockquote>
+<p>请求路径携带参数</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114214056770.png" alt="image-20230114214056770"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114214151474.png" alt="image-20230114214151474"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114214215905.png" alt="image-20230114214215905"></p>
+<h3 id="PathVariable"><a href="#PathVariable" class="headerlink" title="@PathVariable"></a>@PathVariable</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230114221014721.png" alt="image-20230114221014721"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114221130138.png" alt="image-20230114221130138"></p>
+<h3 id="原生servletapi-调用"><a href="#原生servletapi-调用" class="headerlink" title="原生servletapi 调用"></a>原生servletapi 调用</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230114223528458.png" alt="image-20230114223528458"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114223543121.png" alt="image-20230114223543121"></p>
+<h3 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230114231224995.png" alt="image-20230114231224995"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114231444986.png" alt="image-20230114231444986"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114231510258.png" alt="image-20230114231510258"></p>
+<blockquote>
+<p>结果</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114231728626.png" alt="image-20230114231728626"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230114231746593.png" alt="image-20230114231746593"></p>
+<h2 id="域对象共享数据"><a href="#域对象共享数据" class="headerlink" title="域对象共享数据"></a>域对象共享数据</h2><h3 id="servletAPI共享数据"><a href="#servletAPI共享数据" class="headerlink" title="servletAPI共享数据"></a>servletAPI共享数据</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230115222655501.png" alt="image-20230115222655501"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115222728473.png" alt="image-20230115222728473"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115222749336.png" alt="image-20230115222749336"></p>
+<h3 id="modelandview共享数据"><a href="#modelandview共享数据" class="headerlink" title="modelandview共享数据"></a>modelandview共享数据</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230115224038290.png" alt="image-20230115224038290"></p>
+<blockquote>
+<p>model</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115224548448.png" alt="image-20230115224548448"></p>
+<blockquote>
+<p>map</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115224926312.png" alt="image-20230115224926312"></p>
+<blockquote>
+<p>modelmap</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115225231065.png" alt="image-20230115225231065"></p>
+<blockquote>
+<p>model–modelmap–map关系</p>
+</blockquote>
+<blockquote>
+<p>modelmap</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115230257361.png" alt="image-20230115230257361"></p>
+<blockquote>
+<p>model</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115230334369.png" alt="image-20230115230334369"></p>
+<blockquote>
+<p>map</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115230507698.png" alt="image-20230115230507698"></p>
+<blockquote>
+<p>实现</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230115230707024.png" alt="image-20230115230707024"></p>
+<h3 id="dispatcherServlet流程"><a href="#dispatcherServlet流程" class="headerlink" title="dispatcherServlet流程"></a>dispatcherServlet流程</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230116212849754.png" alt="image-20230116212849754"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230116213018836.png" alt="image-20230116213018836"></p>
+<blockquote>
+<p>对应</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230116213123787.png" alt="image-20230116213123787"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230116213152130.png" alt="image-20230116213152130"></p>
+<h2 id="springMVC的视图"><a href="#springMVC的视图" class="headerlink" title="springMVC的视图"></a>springMVC的视图</h2><blockquote>
+<p>thymeleaf解析器</p>
+<p>dispatcherservlet–processdispatchresult–render</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230116222735554.png" alt="image-20230116222735554"></p>
+<h3 id="forward转发–地址不变"><a href="#forward转发–地址不变" class="headerlink" title="forward转发–地址不变"></a>forward转发–地址不变</h3><blockquote>
+<p>执行</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230116230641339.png" alt="image-20230116230641339"></p>
+<blockquote>
+<p>第一次请求</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230116230546898.png" alt="image-20230116230546898"></p>
+<blockquote>
+<p>第二次请求</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230116230724865.png" alt="image-20230116230724865"></p>
+<h3 id="redirect重定向–两次请求"><a href="#redirect重定向–两次请求" class="headerlink" title="redirect重定向–两次请求"></a>redirect重定向–两次请求</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230117191558260.png" alt="image-20230117191558260"></p>
+<h3 id="view-controller"><a href="#view-controller" class="headerlink" title="view-controller"></a>view-controller</h3><blockquote>
+<p>mvc中用来制定首页</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;!--    path:设置处理的 请求地址，view-name:请求地址对应的视图名称--&gt;</span><br><span class="line">    &lt;mvc:view-controller path=<span class="string">&quot;/&quot;</span> view-name=<span class="string">&quot;index&quot;</span>&gt;&lt;/mvc:view-controller&gt;</span><br><span class="line">&lt;!--    开启注解驱动--&gt;</span><br><span class="line">    &lt;mvc:annotation-driven/&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="restful中的请求方式"><a href="#restful中的请求方式" class="headerlink" title="restful中的请求方式"></a>restful中的请求方式</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230118105838378.png" alt="image-20230118105838378"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118105900436.png" alt="image-20230118105900436"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118111026373.png" alt="image-20230118111026373"></p>
+<h3 id="开放对静态资源的访问"><a href="#开放对静态资源的访问" class="headerlink" title="开放对静态资源的访问"></a>开放对静态资源的访问</h3><blockquote>
+<p>对静态资源的访问</p>
+<p>先是dispatcherservlet寻找–若找不到，交给默认的defaultservlet找</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118120719630.png" alt="image-20230118120719630"></p>
+<h3 id="httpMessageConverter–报文信息转换"><a href="#httpMessageConverter–报文信息转换" class="headerlink" title="httpMessageConverter–报文信息转换"></a>httpMessageConverter–报文信息转换</h3><blockquote>
+<p>提供了两个注解和类型</p>
+<ul>
+<li>@requestbody———requestentity</li>
+<li>@responsebody———–responseentity</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>将请求报文转换为java对象</p>
+<p>将java对象转换为响应报文</p>
+</blockquote>
+<h3 id="responsebody"><a href="#responsebody" class="headerlink" title="@responsebody"></a>@responsebody</h3><blockquote>
+<p>不走视图，返回字符-succes-</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118151750870.png" alt="image-20230118151750870"></p>
+<blockquote>
+<p>json–返回对象</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118153859957.png" alt="image-20230118153859957"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118153912516.png" alt="image-20230118153912516"> </p>
+<h3 id="拦截器的配置"><a href="#拦截器的配置" class="headerlink" title="拦截器的配置"></a>拦截器的配置</h3><blockquote>
+<p>springMVC中的拦截器用于dispatcherservlet</p>
+<ul>
+<li>prehandle:控制器方法执行之前执行，返回类型boolean，返回true放行，false表示拦截</li>
+<li>posthandle：控制器方法执行之后执行</li>
+<li>aftercomplation:处理完视图和模型视图，渲染视图后执行</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>拦截器配置</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//配置拦截器</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FirstInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;prehandler&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> HandlerInterceptor.<span class="built_in">super</span>.preHandle(request, response, handler);</span><br><span class="line"><span class="comment">//        return false;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;postHandle&quot;</span>);</span><br><span class="line">        HandlerInterceptor.<span class="built_in">super</span>.postHandle(request, response, handler, modelAndView);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;afterCompletion&quot;</span>);</span><br><span class="line">        HandlerInterceptor.<span class="built_in">super</span>.afterCompletion(request, response, handler, ex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecondInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;。。。。&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>springmvc.xml配置</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;!--    配置拦截器_三种方式--&gt;</span><br><span class="line">    &lt;mvc:interceptors&gt;</span><br><span class="line">&lt;!--        &lt;bean class=<span class="string">&quot;com.miao.controller.interceptor.FirstInterceptor&quot;</span>&gt;&lt;/bean&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;ref bean=<span class="string">&quot;firstInterceptor&quot;</span>&gt;&lt;/ref&gt;--&gt;</span><br><span class="line">        &lt;mvc:interceptor&gt;</span><br><span class="line">            &lt;mvc:mapping path=<span class="string">&quot;/**&quot;</span>/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=<span class="string">&quot;/&quot;</span>/&gt;</span><br><span class="line">            &lt;ref bean=<span class="string">&quot;firstInterceptor&quot;</span>&gt;&lt;/ref&gt;</span><br><span class="line">        &lt;/mvc:interceptor&gt;</span><br><span class="line">    &lt;/mvc:interceptors&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三个拦截方法"><a href="#三个拦截方法" class="headerlink" title="三个拦截方法"></a>三个拦截方法</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230118220905447.png" alt="image-20230118220905447"></p>
+<blockquote>
+<p>prehandle</p>
+<p>控制器之前执行–按照遍历的顺序</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118220321525.png" alt="image-20230118220321525"></p>
+<blockquote>
+<p>posthandle</p>
+<p>控制器之后执行–遍历–倒叙执行</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118220550056.png" alt="image-20230118220550056"></p>
+<blockquote>
+<p>aftercomplation</p>
+<p>渲染视图之后执行–遍历–倒叙执行</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118221018752.png" alt="image-20230118221018752"></p>
+<h3 id="基于配置异常处理"><a href="#基于配置异常处理" class="headerlink" title="基于配置异常处理"></a>基于配置异常处理</h3><blockquote>
+<p>显示结果</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118224005803.png" alt="image-20230118224005803"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118224039715.png" alt="image-20230118224039715"></p>
+<blockquote>
+<p>xml中配置</p>
+</blockquote>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118224126916.png" alt="image-20230118224126916"></p>
+<h3 id="基于注解配置异常处理"><a href="#基于注解配置异常处理" class="headerlink" title="基于注解配置异常处理"></a>基于注解配置异常处理</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230118225054965.png" alt="image-20230118225054965"></p>
+<p><img src="/2023/01/13/Spring-mvc-study/image-20230118225108188.png" alt="image-20230118225108188"></p>
+<h2 id="注解配置springmvc"><a href="#注解配置springmvc" class="headerlink" title="注解配置springmvc"></a>注解配置springmvc</h2><blockquote>
+<p>用于替换springmvc.xml</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 组件扫描  thymeleaf视图解析器  首页跳转view-controller  静态资源访问default-servlet-handler</span></span><br><span class="line"><span class="comment"> * 注解驱动annotation-driven  SimpleMappingExceptionResolver异常处理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//标识为配置类</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="comment">//开启组件扫描</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;com.miao.mvc&quot;)</span></span><br><span class="line"><span class="comment">//开区注解驱动</span></span><br><span class="line"><span class="meta">@EnableWebMvc</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Webconfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//替换springmvc.xml中的视图解析</span></span><br><span class="line">    <span class="comment">//配置生成模板解析器</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ITemplateResolver <span class="title function_">contextTemplateResolver</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">WebApplicationContext</span> <span class="variable">webApplicationContext</span> <span class="operator">=</span> ContextLoader.getCurrentWebApplicationContext();</span><br><span class="line">        <span class="type">ServletContextTemplateResolver</span> <span class="variable">contextTemplateResolver</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServletContextTemplateResolver</span>(</span><br><span class="line">                webApplicationContext.getServletContext()</span><br><span class="line">        );</span><br><span class="line">        contextTemplateResolver.setPrefix(<span class="string">&quot;/WEB-INF/templates/&quot;</span>);</span><br><span class="line">        contextTemplateResolver.setSuffix(<span class="string">&quot;.html&quot;</span>);</span><br><span class="line">        contextTemplateResolver.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        contextTemplateResolver.setTemplateMode(TemplateMode.HTML);</span><br><span class="line">        <span class="keyword">return</span> contextTemplateResolver;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//生成模板引擎 并为 模板引擎 注入模板解析器</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> SpringTemplateEngine <span class="title function_">templateEngine</span><span class="params">(ITemplateResolver contextTemplateResolver)</span>&#123;</span><br><span class="line">        <span class="type">SpringTemplateEngine</span> <span class="variable">templateEngine</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SpringTemplateEngine</span>();</span><br><span class="line">        templateEngine.setTemplateResolver(contextTemplateResolver);</span><br><span class="line">        <span class="keyword">return</span> templateEngine;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//生成视图解析器 并为 解析器注入 模板引擎</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ViewResolver <span class="title function_">viewResolver</span><span class="params">(SpringTemplateEngine templateEngine)</span>&#123;</span><br><span class="line">        <span class="type">ThymeleafViewResolver</span> <span class="variable">viewResolver</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThymeleafViewResolver</span>();</span><br><span class="line">        viewResolver.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        viewResolver.setTemplateEngine(templateEngine);</span><br><span class="line">        <span class="keyword">return</span> viewResolver;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态资源访问default-servlet-handler</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configureDefaultServletHandling</span><span class="params">(DefaultServletHandlerConfigurer configurer)</span> &#123;</span><br><span class="line">        configurer.enable();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//配置拦截器 /*:拦截一层  /**：拦截所有层</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        <span class="type">TestInterceptor</span> <span class="variable">testInterceptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TestInterceptor</span>();</span><br><span class="line">        registry.addInterceptor(testInterceptor).addPathPatterns(<span class="string">&quot;/**&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addViewControllers</span><span class="params">(ViewControllerRegistry registry)</span> &#123;</span><br><span class="line">        registry.addViewController(<span class="string">&quot;/hello&quot;</span>).setViewName(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//文件上传</span></span><br><span class="line"><span class="comment">//    @Bean</span></span><br><span class="line"><span class="comment">//    public MultipartResolver multipartResolver()&#123;</span></span><br><span class="line"><span class="comment">//        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();</span></span><br><span class="line"><span class="comment">//        return commonsMultipartResolver;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">    <span class="comment">//异常处理java.lang.ArithmeticException</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configureHandlerExceptionResolvers</span><span class="params">(List&lt;HandlerExceptionResolver&gt; resolvers)</span> &#123;</span><br><span class="line">        <span class="type">SimpleMappingExceptionResolver</span> <span class="variable">simpleMappingExceptionResolver</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleMappingExceptionResolver</span>();</span><br><span class="line">        <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        properties.setProperty(<span class="string">&quot;java.lang.ArithmeticException&quot;</span>,<span class="string">&quot;error&quot;</span>);</span><br><span class="line">        simpleMappingExceptionResolver.setExceptionMappings(properties);</span><br><span class="line">        simpleMappingExceptionResolver.setExceptionAttribute(<span class="string">&quot;ex&quot;</span>);</span><br><span class="line">        resolvers.add(simpleMappingExceptionResolver);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>用来替代web.xml</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//web工程的初始化，用来代替web.xml</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebInit</span> <span class="keyword">extends</span> <span class="title class_">AbstractAnnotationConfigDispatcherServletInitializer</span> &#123;</span><br><span class="line">    <span class="comment">//spring的配置类</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt;[] getRootConfigClasses() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Class</span>[]&#123;SpringConfig.class&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//springmvc 的配置类</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt;[] getServletConfigClasses() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Class</span>[]&#123;Webconfig.class&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//dispatcherservlet的映射规则 url-pattern</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> String[] getServletMappings() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;/&quot;</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//配置过滤器</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Filter[] getServletFilters() &#123;</span><br><span class="line">        <span class="type">CharacterEncodingFilter</span> <span class="variable">encodingFilter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CharacterEncodingFilter</span>();</span><br><span class="line">        encodingFilter.setEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        encodingFilter.setForceResponseEncoding(<span class="literal">true</span>);</span><br><span class="line">        <span class="type">HiddenHttpMethodFilter</span> <span class="variable">methodFilter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HiddenHttpMethodFilter</span>();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Filter</span>[]&#123;encodingFilter,methodFilter&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="dispatcherservlet–关系"><a href="#dispatcherservlet–关系" class="headerlink" title="dispatcherservlet–关系"></a>dispatcherservlet–关系</h3><p><img src="/2023/01/13/Spring-mvc-study/image-20230119140850907.png" alt="image-20230119140850907"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/xmiaostudy">喵大人</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/01/13/Spring-mvc-study/">http://example.com/2023/01/13/Spring-mvc-study/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/19/spring-%E5%86%8D%E7%90%86%E8%A7%A3-study/"><img class="prev-cover" src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">spring-再理解-study</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/08/Spring-Study/"><img class="next-cover" src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Spring-Study</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/12/16/PAniQkBVuTNeZFo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">喵大人</div><div class="author-info__description">这是用来学习使用的博客，记录学习笔记，做一个充实的自己。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xmiaostudy"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xmiaostudy" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2044478698@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#springmvc-%E9%A6%96%E9%A1%B5%E8%AE%BF%E9%97%AE"><span class="toc-number">1.</span> <span class="toc-text">springmvc-首页访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#requestmapping-value"><span class="toc-number">1.1.</span> <span class="toc-text">@requestmapping-value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#requestmapping-method"><span class="toc-number">1.2.</span> <span class="toc-text">@requestmapping-method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#requestmapping-params"><span class="toc-number">1.3.</span> <span class="toc-text">@requestmapping-params</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PathVariable"><span class="toc-number">1.4.</span> <span class="toc-text">@PathVariable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9Fservletapi-%E8%B0%83%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">原生servletapi 调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RequestParam"><span class="toc-number">1.6.</span> <span class="toc-text">@RequestParam</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%9F%E5%AF%B9%E8%B1%A1%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE"><span class="toc-number">2.</span> <span class="toc-text">域对象共享数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#servletAPI%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.</span> <span class="toc-text">servletAPI共享数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#modelandview%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text">modelandview共享数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dispatcherServlet%E6%B5%81%E7%A8%8B"><span class="toc-number">2.3.</span> <span class="toc-text">dispatcherServlet流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#springMVC%E7%9A%84%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">springMVC的视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#forward%E8%BD%AC%E5%8F%91%E2%80%93%E5%9C%B0%E5%9D%80%E4%B8%8D%E5%8F%98"><span class="toc-number">3.1.</span> <span class="toc-text">forward转发–地址不变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redirect%E9%87%8D%E5%AE%9A%E5%90%91%E2%80%93%E4%B8%A4%E6%AC%A1%E8%AF%B7%E6%B1%82"><span class="toc-number">3.2.</span> <span class="toc-text">redirect重定向–两次请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view-controller"><span class="toc-number">3.3.</span> <span class="toc-text">view-controller</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#restful%E4%B8%AD%E7%9A%84%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="toc-number">3.4.</span> <span class="toc-text">restful中的请求方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E5%AF%B9%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E7%9A%84%E8%AE%BF%E9%97%AE"><span class="toc-number">3.5.</span> <span class="toc-text">开放对静态资源的访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#httpMessageConverter%E2%80%93%E6%8A%A5%E6%96%87%E4%BF%A1%E6%81%AF%E8%BD%AC%E6%8D%A2"><span class="toc-number">3.6.</span> <span class="toc-text">httpMessageConverter–报文信息转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#responsebody"><span class="toc-number">3.7.</span> <span class="toc-text">@responsebody</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">3.8.</span> <span class="toc-text">拦截器的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E6%8B%A6%E6%88%AA%E6%96%B9%E6%B3%95"><span class="toc-number">3.9.</span> <span class="toc-text">三个拦截方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E9%85%8D%E7%BD%AE%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">3.10.</span> <span class="toc-text">基于配置异常处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AE%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">3.11.</span> <span class="toc-text">基于注解配置异常处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3%E9%85%8D%E7%BD%AEspringmvc"><span class="toc-number">4.</span> <span class="toc-text">注解配置springmvc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dispatcherservlet%E2%80%93%E5%85%B3%E7%B3%BB"><span class="toc-number">4.1.</span> <span class="toc-text">dispatcherservlet–关系</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/02/vue-error-digital-envelope-routines-initialization-error/" title="vue-error:digital envelope routines::initialization error"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue-error:digital envelope routines::initialization error"/></a><div class="content"><a class="title" href="/2023/02/02/vue-error-digital-envelope-routines-initialization-error/" title="vue-error:digital envelope routines::initialization error">vue-error:digital envelope routines::initialization error</a><time datetime="2023-02-02T13:51:49.000Z" title="Created 2023-02-02 21:51:49">2023-02-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/27/Kubernetes%EF%BC%88k8s%EF%BC%89-study/" title="Kubernetes（k8s）--study"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kubernetes（k8s）--study"/></a><div class="content"><a class="title" href="/2023/01/27/Kubernetes%EF%BC%88k8s%EF%BC%89-study/" title="Kubernetes（k8s）--study">Kubernetes（k8s）--study</a><time datetime="2023-01-27T12:52:27.000Z" title="Created 2023-01-27 20:52:27">2023-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/26/docker-study/" title="docker--study"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker--study"/></a><div class="content"><a class="title" href="/2023/01/26/docker-study/" title="docker--study">docker--study</a><time datetime="2023-01-26T12:50:09.000Z" title="Created 2023-01-26 20:50:09">2023-01-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/25/springcloud-study/" title="springcloud--study"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="springcloud--study"/></a><div class="content"><a class="title" href="/2023/01/25/springcloud-study/" title="springcloud--study">springcloud--study</a><time datetime="2023-01-25T11:46:47.000Z" title="Created 2023-01-25 19:46:47">2023-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/24/nginx-study/" title="nginx-study"><img src="https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="nginx-study"/></a><div class="content"><a class="title" href="/2023/01/24/nginx-study/" title="nginx-study">nginx-study</a><time datetime="2023-01-24T08:40:11.000Z" title="Created 2023-01-24 16:40:11">2023-01-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2022/12/16/kn4ZMiXBaS6G2xR.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 喵大人</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">xmiaostudy</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
